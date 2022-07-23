@@ -1,32 +1,26 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
 import './App.css'
+import ListStates from './components/ListStates'
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <div className="App">
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src="/vite.svg" className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://reactjs.org" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+    <div className='container'>
+      <div className="row justify-content-center">
+        <div className="col-sm-12 text-center">
+          <h1>State Abbreviator</h1>
+        </div>
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
+      <div id="dropdown-btn" className="dropdown">
+        <button className="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+          Select a State
         </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
+        <ul className="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+          <ListStates />
+        </ul>
       </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      <div id="StateAbbr" className='row justify-content-center'>
+        <div id="Abbr" className="col-sm-6 text-center"></div>
+      </div>
     </div>
   )
 }
